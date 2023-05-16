@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/17/2019 13:19:48" ReportInfo.Modified="05/16/2023 11:52:41" ReportInfo.CreatorVersion="2023.1.5.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="Data" ReferenceName="Data" DataType="null" Enabled="true">
+	  <Column Name="ActualWork" DataType="System.Double"/>
+	  <Column Name="ProjectManagerName" DataType="System.String"/>
+      <Column Name="ActivityTotals" DataType="null">
+	      <Column Name="Analytics" DataType="System.Decimal"/>
+	      <Column Name="AnalyticsLaborCosts" DataType="System.Double"/>
+	      <Column Name="Development" DataType="System.Decimal"/>
+	      <Column Name="DevelopmentLaborCosts" DataType="System.Double"/>
+	      <Column Name="Management" DataType="System.Decimal"/>
+	      <Column Name="ManagementLaborCosts" DataType="System.Double"/>
+	      <Column Name="Testing" DataType="System.Decimal"/>
+	      <Column Name="TestingLaborCosts" DataType="System.Double"/>
+	      <Column Name="TechnicalDebt" DataType="System.Decimal"/>
+      </Column>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="1000" PaperHeight="10000" Watermark.Font="Calibri, 60pt">
+    <DataBand Name="ЭкономикаУзел" Width="3704.4" Height="283.5">
+      <TableObject Name="Table7" Left="18.9" Top="18.9" Width="1039.5" Height="245.7" Border.Lines="All">
+        <TableColumn Name="Column156" Width="302.4"/>
+        <TableColumn Name="Column157" Width="132.3"/>
+        <TableColumn Name="Column158" Width="198.45"/>
+        <TableColumn Name="Column159" Width="179.55"/>
+        <TableColumn Name="Column160" Width="122.85"/>
+        <TableColumn Name="Column161" Width="103.95"/>
+        <TableRow Name="Row98" Height="56.7">
+          <TableCell Name="Cell2333" Border.Lines="All" Text="ТРЗ Jira (факт) ч/ч" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="Cell2334" Border.Lines="All" Text="Коэффициенты" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="Cell2335" Border.Lines="All" Text="Отделы" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="Cell2336" Border.Lines="All" Text="ТРЗ Jira декомпозиция ч/ч" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="Cell2357" Border.Lines="All" Text="%" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="Cell2362" Border.Lines="All" Text="Типовое распределение, %" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row103">
+          <TableCell Name="Cell2373" Border.Lines="All" Fill.Color="198, 224, 180" Text="[Data.ActualWork]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="11"/>
+          <TableCell Name="Cell2374" Border.Lines="All" Fill.Color="198, 224, 180" Text="Аналитика" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2375" Border.Lines="All" Fill.Color="198, 224, 180" Text="AN" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2376" Border.Lines="All" Text="[Data.ActivityTotals.AnalyticsLaborCosts]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="2"/>
+          <TableCell Name="Cell2377" Border.Lines="All" Text="[100*[Data.ActivityTotals.AnalyticsLaborCosts]/([Data.ActivityTotals.AnalyticsLaborCosts]+[Data.ActivityTotals.ManagementLaborCosts]+[Data.ActivityTotals.DevelopmentLaborCosts]+[Data.ActivityTotals.TestingLaborCosts])]%" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="2"/>
+          <TableCell Name="Cell2378" Border.Lines="All" Text="[Data.ActivityTotals.Analytics]%" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="2"/>
+        </TableRow>
+        <TableRow Name="Row104">
+          <TableCell Name="Cell2381" Border.Lines="All" Fill.Color="198, 224, 180" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2382" Border.Lines="All" Fill.Color="198, 224, 180" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2383" Border.Lines="All" Fill.Color="198, 224, 180" Text="SM" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2384" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2385" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2386" Border.Lines="All" Font="Calibri, 11pt"/>
+        </TableRow>
+        <TableRow Name="Row105" Height="37.8">
+          <TableCell Name="Cell2389" Border.Lines="All" Fill.Color="198, 224, 180" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2390" Border.Lines="All" Fill.Color="180, 198, 231" Text="Взаимодействие ТАП (разработка)" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2391" Border.Lines="All" Fill.Color="180, 198, 231" Text="DATA" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2392" Border.Lines="All" Text="[Data.ActivityTotals.DevelopmentLaborCosts]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="4"/>
+          <TableCell Name="Cell2393" Border.Lines="All" Text="[100*[Data.ActivityTotals.DevelopmentLaborCosts]/([Data.ActivityTotals.AnalyticsLaborCosts]+[Data.ActivityTotals.ManagementLaborCosts]+[Data.ActivityTotals.DevelopmentLaborCosts]+[Data.ActivityTotals.TestingLaborCosts])]%" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="4"/>
+          <TableCell Name="Cell2394" Border.Lines="All" Text="[Data.ActivityTotals.Development]%" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="4"/>
+        </TableRow>
+        <TableRow Name="Row106">
+          <TableCell Name="Cell2397" Border.Lines="All" Fill.Color="198, 224, 180" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2398" Border.Lines="All" Fill.Color="180, 198, 231" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2399" Border.Lines="All" Fill.Color="180, 198, 231" Text="DESK" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2400" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2401" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2402" Border.Lines="All" Font="Calibri, 11pt"/>
+        </TableRow>
+        <TableRow Name="Row107">
+          <TableCell Name="Cell2405" Border.Lines="All" Fill.Color="198, 224, 180" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2406" Border.Lines="All" Fill.Color="180, 198, 231" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2407" Border.Lines="All" Fill.Color="180, 198, 231" Text="DEVOPS" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2408" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2409" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2410" Border.Lines="All" Font="Calibri, 11pt"/>
+        </TableRow>
+        <TableRow Name="Row108">
+          <TableCell Name="Cell2413" Border.Lines="All" Fill.Color="198, 224, 180" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2414" Border.Lines="All" Fill.Color="180, 198, 231" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2415" Border.Lines="All" Fill.Color="180, 198, 231" Text="WEB" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2416" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2417" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2418" Border.Lines="All" Font="Calibri, 11pt"/>
+        </TableRow>
+        <TableRow Name="Row109">
+          <TableCell Name="Cell2421" Border.Lines="All" Fill.Color="198, 224, 180" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2422" Border.Lines="All" Fill.Color="255, 230, 180" Text="Тестирование" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2423" Border.Lines="All" Fill.Color="255, 230, 180" Text="QA" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2424" Border.Lines="All" Text="[Data.ActivityTotals.TestingLaborCosts]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="Cell2425" Border.Lines="All" Text="[100*[Data.ActivityTotals.TestingLaborCosts]/([Data.ActivityTotals.AnalyticsLaborCosts]+[Data.ActivityTotals.ManagementLaborCosts]+[Data.ActivityTotals.DevelopmentLaborCosts]+[Data.ActivityTotals.TestingLaborCosts])]%" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+          <TableCell Name="Cell2426" Border.Lines="All" Text="[Data.ActivityTotals.Testing]%" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row110">
+          <TableCell Name="Cell2429" Border.Lines="All" Fill.Color="198, 224, 180" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2430" Border.Lines="All" Fill.Color="192, 192, 255" Text="Управление" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2431" Border.Lines="All" Fill.Color="192, 192, 255" Text="ADM" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2432" Border.Lines="All" Text="[Data.ActivityTotals.ManagementLaborCosts]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="2"/>
+          <TableCell Name="Cell2433" Border.Lines="All" Text="[100*[Data.ActivityTotals.ManagementLaborCosts]/([Data.ActivityTotals.AnalyticsLaborCosts]+[Data.ActivityTotals.ManagementLaborCosts]+[Data.ActivityTotals.DevelopmentLaborCosts]+[Data.ActivityTotals.TestingLaborCosts])]%" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="2"/>
+          <TableCell Name="Cell2434" Border.Lines="All" Text="[Data.ActivityTotals.Management]%" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="Calibri, 11pt, style=Bold" RowSpan="2"/>
+        </TableRow>
+        <TableRow Name="Row99">
+          <TableCell Name="Cell2338" Border.Lines="All" Fill.Color="198, 224, 180" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2339" Border.Lines="All" Fill.Color="192, 192, 255" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2340" Border.Lines="All" Fill.Color="192, 192, 255" Text="MGM" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2341" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2358" Border.Lines="All" Font="Calibri, 11pt"/>
+          <TableCell Name="Cell2363" Border.Lines="All" Font="Calibri, 11pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+</Report>
