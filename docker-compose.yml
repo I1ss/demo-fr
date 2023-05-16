@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  testapp:
+    image: ${DOCKER_REGISTRY-}testapp
+    build:
+      context: .
+      dockerfile: TestApp/Dockerfile
+    ports:
+      - 44363:80
+      - 44363:443
